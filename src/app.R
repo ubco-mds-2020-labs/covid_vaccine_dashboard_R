@@ -11,21 +11,21 @@ app$layout(htmlDiv(list(
     'USA & Canada COVID-19 Vaccination Rollout Dashboard',
     style = list(
       color = 'blue',
-      font - family = 'sans-serif',
-      font - size = 44,
+      family = 'sans-serif',
+      size = 44,
       marginTop = 50
     )
   ),
   htmlP(
     'Hover over a state/province for more information on its current vaccination progress, or click to examine its vaccination rollout over time via the plots on the left.',
-    style = list(font - family = 'sans-serif')
+    style = list(family = 'sans-serif')
   ),
   htmlIframe(
     srcDoc = plot_upper_dash,
     style = list(
       width = '100%',
       height = '1100px',
-      border - width = '0px'
+      border = '0px'
     )
   )
 )))
