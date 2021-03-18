@@ -2,6 +2,7 @@ library(dash)
 library(dashCoreComponents)
 library(dashHtmlComponents)
 library(dashBootstrapComponents)
+source('src/plot_upper_dash.R')
 
 app <- Dash$new()
 
