@@ -21,7 +21,7 @@ app$layout(htmlDiv(list(
     style = list(family = 'sans-serif')
   ),
   htmlIframe(
-    srcDoc = plot_upper_dash,
+    srcDoc = plot_upper_dash(),
     style = list(
       width = '100%',
       height = '1100px',

@@ -9,7 +9,7 @@ processed_vax_url <- 'https://github.com/ubco-mds-2020-labs/covid_vaccine_dashbo
 download.file(processed_vax_url,csv_path)
 
 # Set up reticulate
-use_virtualenv(virtualenv_path,required=TRUE)
+# use_virtualenv(virtualenv_path,required=TRUE)
 
 # Import Python scripts
 get_data_python <- import_from_path('get_data', path='src/python',convert=FALSE)

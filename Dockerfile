@@ -13,4 +13,4 @@ RUN if [ -f '/app/apt-packages' ]; then apt-get update -q && cat apt-packages | 
 RUN if [ -f '/app/init.R' ]; then /usr/bin/R --no-init-file --no-save --quiet --slave -f /app/init.R; fi; 
 
 # here app.R needs to match the name of the file which contains your app              
-CMD cd /app && /usr/bin/R --no-save -f /app/app.R
+CMD cd /app && /usr/bin/R --no-save -f /app/src/app.R
