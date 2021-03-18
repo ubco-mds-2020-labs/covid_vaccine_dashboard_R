@@ -2,6 +2,7 @@ data/
 logs/
 *.DS_Store
 .ipynb_checkpoints
+*.Rproj
 
 # History files
 .Rhistory
