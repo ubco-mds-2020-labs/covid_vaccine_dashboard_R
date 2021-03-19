@@ -1,5 +1,7 @@
 # [USA & Canada COVID-19 Vaccination Rollout Dashboard -- *R Implementation*](https://covid-vaccine-dashboard-r.herokuapp.com)
 
+![](dashboard_screenshot.png)
+
 ## What are we doing?
 ### The problem
 The status and progress of the COVID-19 vaccination rollout is of great public interest. Thus far, Canada's progress has lagged behind that of the United States on a per-capita basis. This has led the current administration to come under increasing scrutiny, as the public grows eager for a return to normalcy after enduring almost a full year of the pandemic. This creates a need for easy access to hard data on vaccination progress.
