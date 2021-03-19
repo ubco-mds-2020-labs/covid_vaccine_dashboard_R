@@ -26,7 +26,10 @@ source('src/get_data.R')
 #        daily_distributed_rolling = Daily Distributed
 #        )
 
-plot_lower_dash <- function(location_choice, my_dropdown, metric_choice, metric_dropdown) {
+plot_lower_dash <- function(my_dropdown=list('Alabama','California'),
+                            location_choice='States and Provinces',
+                            metric_choice='Per 100',
+                            metric_dropdown='total_vaccinations_per_hundred') {
     # Fetch data
     data = get_data()
 
@@ -42,16 +45,18 @@ plot_lower_dash <- function(location_choice, my_dropdown, metric_choice, metric_
      # Fetch regionally grouped data
     data_div = get_data_div()
     
+    # cat("my_dropdown in plot_lower is:", my_dropdown)
+    
     if (location_choice == 'States and Provinces'){
         chart <-
         alt$Chart(data, title='State and Provincial Vaccine Data Over Time')$mark_line()$encode(
             x='date:T',
             y=metric_dropdown,
             color=alt$Color('location', legend=alt$Legend(title="Location")),
-            strokeDash='country:N', )$transform_filter(
+            strokeDash='country:N')$transform_filter(
             alt$FieldOneOfPredicate(field='location', oneOf=my_dropdown))$properties(width=800, height=400)
 
-        chart$to_html()
+        return(chart$to_html())
     }
     
     else if (location_choice == 'Regions'){
@@ -60,10 +65,10 @@ plot_lower_dash <- function(location_choice, my_dropdown, metric_choice, metric_
             alt$X('date:T', axis=alt$Axis(title='Date')),
             y=metric_dropdown,
             color=alt$Color('division', legend=alt$Legend(title="Region")),
-            strokeDash='country:N', )$transform_filter(
+            strokeDash='country:N')$transform_filter(
             alt$FieldOneOfPredicate(field='division', oneOf=my_dropdown))$properties(width=800, height=400)
 
-        region_chart$to_html()
+        return(region_chart$to_html())
         
     }
 }
